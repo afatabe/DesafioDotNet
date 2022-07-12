@@ -1,0 +1,7 @@
+CREATE OR ALTER PROCEDURE dbo.SP_PRODUCT_GET
+    @pId int = -1
+AS
+BEGIN
+    SELECT P.createdAt, P.NAME, P.PRICE, P.BRAND, P.updatedAt, P.ID FROM PRODUCT P WHERE (@pId = -1 OR P.ID = @pId)
+END
+GO
